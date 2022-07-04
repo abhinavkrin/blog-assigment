@@ -44,9 +44,6 @@ export default function EditPost({post}){
 		<div>
 			
 			<form onSubmit={onSave} className={classes.postForm}>
-				<p style={{textAlign: "center", maxWidth: "400px"}}>
-				Since there was no server, I have used file read/write to store and update, the changes may not be seen in containerized enviroment (deployed on vercel). Please run on localhost to see all features working.
-			</p>
 				<div>
 					<label>Title: </label>
 					<input  type="text" value={title} onChange={e => setTitle(e.target.value)}/>

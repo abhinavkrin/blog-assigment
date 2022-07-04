@@ -64,6 +64,6 @@ export default function handler(req, res) {
 		} = req.body;
 		const newPosts = posts.filter(p => p.id != id)
 		fs.writeFileSync(path,JSON.stringify(newPosts));
-		res.json(newPost);
+		res.json({success: true});
 	}
 }
