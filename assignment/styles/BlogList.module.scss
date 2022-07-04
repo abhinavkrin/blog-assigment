@@ -1,0 +1,13 @@
+.blogListContainer {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: stretch;
+	flex-wrap: wrap;
+	margin: auto;
+	padding: 1rem;
+	max-width: 1100px;
+	@media screen and (min-width: 6000px){
+		
+	}
+}

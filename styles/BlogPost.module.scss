@@ -1,0 +1,113 @@
+@import "./pallete.scss";
+
+.article {
+    padding-top: 1em;
+    max-width: 760px;
+    margin-right: auto;
+    margin-left: auto;
+    .blogTitle {
+        font-size: 32px;
+        margin-block-start: 0.4em;
+        margin-block-end: 0.2em;
+        line-height: 35px;
+        text-transform: uppercase;
+    }
+    .blogMeta {
+        color: gray;
+        display: flex;
+        justify-content: space-between;
+        padding-bottom: 0.8rem;
+    }
+    .blogMeta2 {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-top: 1px solid gray;
+        border-bottom: 1px solid gray;
+        margin-bottom: 1rem;
+        padding: 0.1rem;
+        a {
+            font-size: 1.1rem;
+        }
+    }
+    .shareIcons, .shareIcons a {
+        display: flex;
+        align-items: center;
+    }
+    .shareIcons img {
+        padding: 3px!important;
+    }
+    .blog {
+        margin: 1rem 0;
+        word-break: break-word;
+        font-size: 18px;
+        h1,h2,h3,h4,h5,h6 {
+            margin-block-start: 1.5em;
+            margin-block-end: 0.7em;
+        }
+        img {
+            max-width: 90%;
+            display: flex;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        pre{
+            overflow: auto;
+            background: rgba($color: (#000000), $alpha: 0.8);
+            color: white;
+            padding: 0.5rem;
+            border-radius: 0.25rem;
+            font-size: 0.9rem;
+        }
+        blockquote {
+            position: relative;
+            background: lightblue;
+            margin-block-start: 0;
+            margin-block-end: 0;
+            margin-inline-start: 0;
+            margin-inline-end: 0;
+            padding: 1em 40px;
+            border-radius: 5px;
+            color: rgba($color: #000000, $alpha: .8);
+            em {
+                color: darken($color:gray, $amount: 10%);
+            }
+        }
+        blockquote::before {
+            content: '\201C';
+            position: absolute;
+            font-size: 32px;
+            top: 0.5em;
+            left: 20px;
+            line-height: 1;
+        }
+        blockquote::after {
+            content: '\201D';
+            position: absolute;
+            font-size: 32px;
+            bottom: 0.1em;
+            right: 20px;
+            line-height: 1;
+        }
+    }
+}
+
+@media screen and (max-width: 540px){
+    .article {
+        .blogTitle {
+            font-size: 48px;
+            line-height: 50px;
+        }
+        .blog {
+            word-break: break-word;
+            font-size: 20px;
+            img {
+                max-width: 100%;
+            }
+            pre{
+                padding: 0.5rem;
+                border-radius: 0.25rem;
+            }
+        }
+    }
+}
