@@ -1,10 +1,9 @@
 import {useState, useEffect} from 'react';
 import Head from 'next/head'
 import Image from 'next/image'
-import Link from 'next/link'
 import BlogLayout from '../../layouts/BlogLayout'
-import posts from '../../sample/posts.json'
 import classes from '../../styles/BlogPost.module.scss'
+import fs from 'fs';
 export default function PostPage({post}){
 	const [shareUrl,setShareUrl] = useState("");
     const [shareTextTwitter,setShareTextTwitter] = useState("");
@@ -49,6 +48,9 @@ export default function PostPage({post}){
 }
 
 export const getServerSideProps = async (req, res) => {
+    const path = __dirname+'/../../../../sample/posts.json'
+    const postsStr = fs.readFileSync(path);
+    const posts = JSON.parse(postsStr);
 	return {
 		props: {
 			post: posts.find(p => p.id == req.params.id)

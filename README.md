@@ -2,6 +2,7 @@ Link: https://blog-assigment.vercel.app/
 
 To start
 ```
+yarn build
 yarn start
 ```
 
